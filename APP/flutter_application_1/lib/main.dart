@@ -32,14 +32,14 @@ class _NavegacionPrincipalState extends State<NavegacionPrincipal> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _pantallas = [
+    final List<Widget> pantallas = [
       Despacho(lista: _datosDespacho),
       Formulario(onGuardar: _agregarProduccion),
       Produccion(lista: _datosProduccion, onEnviarADespacho: _moverDespacho),
     ];
 
     return Scaffold(
-      body: _pantallas[_indice],
+      body: pantallas[_indice],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indice,
         onTap: (nuevoIndice) => setState(() => _indice = nuevoIndice),
